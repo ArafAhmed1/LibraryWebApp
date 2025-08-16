@@ -59,11 +59,8 @@ const PdfReader = () => {
     navigate(`/book/${book._id}/details`);
   };
 
-  const handleIframeLoad = () => {
-    adjustIframeSize(); // Adjust size once the iframe content is fully loaded
-  };
 
-  const handleFinishedReading = async () => {
+  async function handleFinishedReading() {
     try {
       const response = await axios.post("/api/finished-reading", {
         bookId: id,
@@ -74,7 +71,7 @@ const PdfReader = () => {
       console.error("Error marking book as finished:", err);
       alert("Failed to mark book as finished. Please try again.");
     }
-  };
+  }
 
   if (!book) {
     return <div>Loading...</div>;
