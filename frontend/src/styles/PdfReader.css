@@ -12,6 +12,7 @@
   flex-direction: column; /* Stack title and author vertically */
   align-items: center; /* Ensure title and author are centered horizontally */
   width: 100%; /* Ensure the container takes the full width */
+  color: aliceblue;
 }
 
 .book-info h2 {
@@ -20,13 +21,14 @@
   font-size: 2.5rem; /* Make the title larger */
   font-weight: bold; /* Make the title bold */
   text-align: center; /* Ensure title is centered */
+  color: aliceblue;
 }
 
 .book-info h3 {
   margin: 0;
   padding: 5px;
   font-size: 1.5rem; /* Adjust the size of the author name */
-  color: #777; /* Optional: style the author name */
+  color: #e2cdcd; /* Optional: style the author name */
   text-align: center; /* Ensure author is centered */
 }
 
@@ -50,7 +52,6 @@
 }
 
 .button {
-  background-color: #36404b;
   color: white;
   border: none;
   padding: 10px 20px;

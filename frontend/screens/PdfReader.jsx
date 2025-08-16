@@ -9,7 +9,6 @@ const PdfReader = () => {
   const navigate = useNavigate();
   const [book, setBook] = useState(null);
   const iframeRef = useRef(null);
-  const [hasMarkedAsFinished, setHasMarkedAsFinished] = useState(false);
 
   useEffect(() => {
     const fetchBook = async () => {
