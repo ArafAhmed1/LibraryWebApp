@@ -1,0 +1,30 @@
+.borrowed-books-page {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.borrowed-books-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+.borrowed-books-table th, .borrowed-books-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.borrowed-books-table th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.borrowed-books-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.borrowed-books-table tr {
+  background-color: #dccfcf;
+}
+

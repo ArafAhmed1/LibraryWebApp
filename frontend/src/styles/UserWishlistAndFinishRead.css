@@ -1,0 +1,85 @@
+.user-bookshelf {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.user-bookshelf h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.user-bookshelf .wishlist-section, .user-bookshelf .finished-books-section {
+  margin-bottom: 30px;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #f3f3f3; /* Light background color for each section */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.user-bookshelf .wishlist-section {
+  background-color: #ffebcd; /* Light color for Wishlist section */
+  border-left: 5px solid #ff8c00; /* Bold orange left border */
+}
+
+.user-bookshelf .finished-books-section {
+  background-color: #e0f7fa; /* Light blue color for Finished Reading section */
+  border-left: 5px solid #00bcd4; /* Bold blue left border */
+}
+
+.user-bookshelf h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #333; /* Darker color for better contrast */
+}
+
+.user-bookshelf .book-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  background-color: #ffffff; /* White background for individual book items */
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.user-bookshelf .book-cover {
+  width: 80px;
+  height: 120px;
+  margin-right: 20px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.user-bookshelf .book-info {
+  flex-grow: 1;
+}
+
+.user-bookshelf .book-info p {
+  margin: 5px 0;
+}
+
+.user-bookshelf button {
+  padding: 8px 12px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.user-bookshelf button:hover {
+  background-color: #45a049;
+}
+
+.user-bookshelf button:focus {
+  outline: none;
+}
+
+.user-bookshelf button:nth-child(2) {
+  background-color: #ffa500;
+}
+
+.user-bookshelf button:nth-child(2):hover {
+  background-color: #ff8c00;
+}

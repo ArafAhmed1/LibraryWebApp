@@ -1,0 +1,82 @@
+/* Main Container */
+.admin-borrow-requests {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .admin-borrow-requests h1 {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .admin-borrow-requests .message {
+    text-align: center;
+    color: #28a745;
+    font-weight: bold;
+  }
+  
+  /* No Requests */
+  .no-requests {
+    text-align: center;
+    color: #888;
+    font-size: 18px;
+  }
+  
+  /* Request List */
+  .admin-borrow-requests .request-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .admin-borrow-requests .request-item {
+    border-bottom: 1px solid #ddd;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .admin-borrow-requests .request-item:last-child {
+    border-bottom: none;
+  }
+  
+  .admin-borrow-requests .request-details p {
+    margin: 5px 0;
+    color: #555;
+  }
+  
+  /* Action Buttons */
+  .admin-borrow-requests .action-buttons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .admin-borrow-requests .btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .admin-borrow-requests .approve-btn {
+    background-color: #28a745;
+    color: #fff;
+  }
+  
+  .admin-borrow-requests .reject-btn {
+    background-color: #dc3545;
+    color: #fff;
+  }
+  
+  .admin-borrow-requests .btn:hover {
+    opacity: 0.9;
+  }
+  

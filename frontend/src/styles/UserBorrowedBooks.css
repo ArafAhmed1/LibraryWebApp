@@ -1,0 +1,129 @@
+/* user-borrowed-books.css */
+.user-borrowed-books {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.user-borrowed-books-section {
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 30px;
+}
+
+.user-borrowed-books-section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #34495e;
+}
+
+.user-borrowed-books-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.user-borrowed-book-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+  padding: 15px;
+  transition: all 0.3s ease;
+}
+
+.user-borrowed-book-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.user-borrowed-book-item img {
+  width: 60px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-right: 20px;
+}
+
+.user-borrowed-book-item p {
+  font-size: 1rem;
+  color: #2c3e50;
+  margin: 5px 0;
+}
+
+button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+button:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
+
+button + button {
+  margin-left: 10px;
+}
+
+p strong {
+  color: #e74c3c;
+}
+
+p:last-child {
+  font-style: italic;
+  color: #7f8c8d;
+}
+
+.user-borrowed-books-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+p {
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .user-borrowed-books {
+    padding: 15px;
+  }
+
+  .user-borrowed-books-section {
+    padding: 10px;
+  }
+
+  .user-borrowed-book-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .user-borrowed-book-item img {
+    margin-bottom: 10px;
+  }
+}

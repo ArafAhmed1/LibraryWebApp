@@ -1,0 +1,19 @@
+/* Footer */
+.footer {
+  background-color: #222;
+  color: #d2c3c3;
+  text-align: center;
+  padding: 20px 0;
+  position: relative; /* Default position */
+  margin-top: auto; /* Push footer to bottom if content is short */
+}
+
+/* Body & HTML ensure full height */
+html, body {
+  height: 100%; /* Ensure the full height is available for layout */
+  margin: 0;
+  padding: 0;
+}
+
+/* Main content container to ensure footer positioning */
+

@@ -1,0 +1,120 @@
+/* AdminReturnRequests.css */
+
+/* Global Styles */
+.admin-return-requests {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f6f9;
+  padding: 30px;
+  color: #333;
+}
+
+.admin-return-requests h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+/* Return Requests List */
+.admin-return-requests ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+/* Return Request Item */
+.admin-return-requests li {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.admin-return-requests li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Book Image */
+.admin-return-requests img {
+  width: 100px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+/* Book Information */
+.admin-return-requests .book-info {
+  margin-bottom: 15px;
+}
+
+.admin-return-requests .book-info p {
+  margin: 5px 0;
+  color: #7f8c8d;
+}
+
+.admin-return-requests .book-info strong {
+  font-size: 1.1rem;
+  color: #34495e;
+}
+
+/* User Info */
+.admin-return-requests .user-info {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  margin-bottom: 20px;
+}
+
+/* Buttons */
+.admin-return-requests button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  font-weight: 600;
+  width: 100%;
+  margin: 8px 0;
+}
+
+.admin-return-requests button:hover {
+  background-color: #2980b9;
+  transform: translateY(-3px);
+}
+
+.admin-return-requests button:focus {
+  outline: none;
+}
+
+/* Reject Button */
+.admin-return-requests button.reject {
+  background-color: #e74c3c;
+}
+
+.admin-return-requests button.reject:hover {
+  background-color: #c0392b;
+}
+
+/* Error and Loading States */
+.admin-return-requests p.loading,
+.admin-return-requests p.error {
+  font-size: 1.2rem;
+  text-align: center;
+  color: #e74c3c;
+  font-weight: 600;
+  margin-top: 30px;
+}

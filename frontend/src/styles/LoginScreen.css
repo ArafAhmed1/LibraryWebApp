@@ -1,0 +1,140 @@
+/* Center the form container vertically and horizontally */
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  /* background: linear-gradient(to right, #6a11cb, #2575fc); */
+  /* background: yellow; */
+}
+
+/* Style the form */
+.login-form {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Form headings */
+.login-form h1 {
+  text-align: center;
+  color: #333333;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+/* Input fields */
+.login-form .form-control {
+  padding: 0.8rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+.login-form .form-control:focus {
+  border-color: #2575fc;
+  box-shadow: 0 0 4px rgba(37, 117, 252, 0.4);
+}
+
+/* Buttons */
+.login-form .btn {
+  width: 100%;
+  background: #2575fc;
+  color: white;
+  font-weight: bold;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.login-form .btn:hover {
+  background: #6a11cb;
+  color: #fff;
+}
+
+/* Register link */
+.login-form a {
+  color: #2575fc;
+  text-decoration: none;
+}
+
+.login-form a:hover {
+  text-decoration: underline;
+}
+/* Center the form container vertically and horizontally */
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f4f4f9; /* Light, neutral background color */
+}
+
+/* Style the form */
+.login-form {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Softer shadow */
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Form headings */
+.login-form h1 {
+  text-align: center;
+  color: #333333;
+  margin-bottom: 1.5rem;
+  font-size: 2.2rem; /* Bigger text */
+  font-weight: 700; /* Bold */
+}
+
+/* Input fields */
+.login-form .form-control {
+  padding: 0.8rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+.login-form .form-control:focus {
+  border-color: #007bff; /* Bootstrap blue */
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.4);
+}
+
+/* Buttons */
+.login-form .btn {
+  width: 100%;
+  background: #007bff; /* Bootstrap primary blue */
+  color: white;
+  font-weight: bold;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem; /* Slightly larger font for button */
+  transition: all 0.3s ease;
+}
+
+.login-form .btn:hover {
+  background: #0056b3; /* Darker blue on hover */
+  color: #fff;
+}
+
+/* Register link */
+.login-form a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.login-form a:hover {
+  text-decoration: underline;
+}

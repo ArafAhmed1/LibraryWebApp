@@ -1,0 +1,73 @@
+/* FilterBooks.css */
+
+.filter-container {
+    text-align: center;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.filter-container h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #d2c3c3;
+}
+
+.filter-form {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.filter-inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.filter-inputs label {
+    font-weight: bold;
+    color: #d2c3c3;
+}
+
+.filter-inputs select {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 180px;
+}
+
+.apply-filter-btn {
+    padding: 10px 20px;
+    font-size: 1.1em;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.apply-filter-btn:hover {
+    background-color: #45a049;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .filter-form {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .filter-inputs select {
+        width: 250px;
+    }
+
+    .apply-filter-btn {
+        width: 200px;
+    }
+}

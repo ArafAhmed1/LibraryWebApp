@@ -1,0 +1,86 @@
+/* ContactUs.css */
+.contact-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  /* background: linear-gradient(to right, #5277bd, #88acea); */
+  font-family: 'Roboto', sans-serif;
+  color: #d2c3c3;
+  padding: 20px;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.contact-header h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #d2c3c3;
+}
+
+.contact-header p {
+  font-size: 1.2rem;
+  color: #ddd;
+}
+
+.contact-team {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.contact-member {
+  background: #ffffff;
+  color: #333;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  width: 400px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-member img {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  object-fit: cover;
+  border: 3px solid #1e3c72;
+}
+
+.contact-member h3 {
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
+
+.contact-member p {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+.contact-member a {
+  color: #1e3c72;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.contact-member a:hover {
+  color: #2a5298;
+  text-decoration: underline;
+}
+
+.contact-member:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+  .contact-member {
+    width: 90%;
+  }
+}
