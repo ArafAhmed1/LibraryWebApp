@@ -59,7 +59,6 @@ app.get('/api', async (req, res) => {
 
 app.get('/api/bookshelf', async (req, res) => {
   try {
-    // const books = await Book.find({}, 'title coverImageLink'); // Fetch only specific fields
     const books = await Book.find();
     res.json(books); // Send the selected fields as the response
   } catch (error) {
