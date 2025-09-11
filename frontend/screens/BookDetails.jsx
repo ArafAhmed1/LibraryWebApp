@@ -9,12 +9,13 @@ const BookDetails = () => {
   const [loading, setLoading] = useState(true); // Loading state
   const [error, setError] = useState(null); // Error state
   const [message, setMessage] = useState(""); // Success/Error message state
+  const API_URL = import.meta.env.VITE_API_URL;
 
   // Fetch book details from backend
   useEffect(() => {
     const fetchBookDetails = async () => {
       try {
-        const response = await axios.get(`/api/bookshelf/${id}/details`);
+        const response = await axios.get(`${API_URL}/api/bookshelf/${id}/details`);
         setBook(response.data); // Set book details to state
         setError(null); // Clear any previous error
       } catch (err) {
@@ -31,7 +32,7 @@ const BookDetails = () => {
   // Handle Borrow Request
   const handleBorrowRequest = async () => {
     try {
-      const response = await axios.post(`/api/borrow`, {
+      const response = await axios.post(`${API_URL}/api/borrow`, {
         bookId: id, // ID of the book being borrowed
         userId: getCurrentUserId(), // Replace with the current logged-in user's ID
       });
@@ -45,7 +46,7 @@ const BookDetails = () => {
   // Handle Add to Wishlist
 const handleAddToWishlist = async () => {
   try {
-    const response = await axios.post("/api/wishlist", {
+    const response = await axios.post(`${API_URL}/api/wishlist`, {
       bookId: id,
       userId: getCurrentUserId(), // Fetch current user ID
     });

@@ -5,12 +5,14 @@ import { getCurrentUserId } from '/globalUser.js';
 const BorrowingHistory = () => {
   const [history, setHistory] = useState([]);
   const [loading, setLoading] = useState(true);
+  const API_URL = import.meta.env.VITE_API_URL;
+
 
   useEffect(() => {
     const fetchHistory = async () => {
       const userId = getCurrentUserId();
       try {
-        const response = await fetch(`/api/borrow/history/${userId}`);
+        const response = await fetch(`${API_URL}/api/borrow/history/${userId}`);
         const data = await response.json();
         setHistory(data.borrowingHistory);
         setLoading(false);

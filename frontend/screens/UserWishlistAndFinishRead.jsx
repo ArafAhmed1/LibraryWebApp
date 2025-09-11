@@ -6,12 +6,13 @@ import '../src/styles/UserWishlistAndFinishRead.css';
 const UserBookshelf = () => {
   const [wishlist, setWishlist] = useState([]);
   const [finishedBooks, setFinishedBooks] = useState([]);
+  const API_URL = import.meta.env.VITE_API_URL;
 
   // Fetch books data
   const fetchUserBooks = async () => {
     try {
       const userId = getCurrentUserId();
-      const response = await axios.get(`/api/users/${userId}/books`);
+      const response = await axios.get(`${API_URL}/api/users/${userId}/books`);
       setWishlist(response.data.wishlist || []);
       setFinishedBooks(response.data.finishedBooks || []);
     } catch (err) {
@@ -27,7 +28,7 @@ const UserBookshelf = () => {
   const removeFromWishlist = async (bookId) => {
     try {
       const userId = getCurrentUserId();
-      await axios.post("/api/wishlist/remove", { bookId, userId });
+      await axios.post(`${API_URL}/api/wishlist/remove`, { bookId, userId });
       setWishlist(wishlist.filter((book) => book._id !== bookId));
     } catch (err) {
       console.error("Error removing from wishlist:", err);
@@ -38,7 +39,7 @@ const UserBookshelf = () => {
   const addToFinishedReading = async (bookId) => {
     try {
       const userId = getCurrentUserId();
-      const response = await axios.post("/api/finished-reading", { bookId, userId });
+      const response = await axios.post(`${API_URL}/api/finished-reading`, { bookId, userId });
       const addedFinishedBook = response.data[response.data.length - 1]; 
 
       setWishlist((prevWishlist) => prevWishlist.filter((book) => book._id !== bookId));
@@ -60,7 +61,7 @@ const UserBookshelf = () => {
   const removeFromFinishedReading = async (bookId) => {
     try {
       const userId = getCurrentUserId();
-      await axios.post("/api/finished-reading/remove", { bookId, userId });
+      await axios.post(`${API_URL}/api/finished-reading/remove`, { bookId, userId });
       setFinishedBooks(finishedBooks.filter((book) => book.bookId._id !== bookId));
     } catch (err) {
       console.error("Error removing from finished reading:", err);

@@ -8,12 +8,13 @@ const AllBooks = () => {
   const [loading, setLoading] = useState(true); // Loading state
   const [error, setError] = useState(null); // Error state
   const [isSearching, setIsSearching] = useState(false); // State to track if a search is active
+  const API_URL = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
     // Fetch books from the backend
     const fetchBooks = async () => {
       try {
-        const res = await fetch('/api/bookshelf'); // Replace with your API endpoint
+        const res = await fetch(`${API_URL}/api/bookshelf`); // Replace with your API endpoint
         if (!res.ok) {
           throw new Error('Failed to fetch books');
         }

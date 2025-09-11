@@ -10,7 +10,8 @@ const FilterBooks = () => {
     const [selectedGenre, setSelectedGenre] = useState('');
     const [filteredBooks, setFilteredBooks] = useState([]);
     const [allBooks, setAllBooks] = useState([]);
-
+    
+    const API_URL = import.meta.env.VITE_API_URL;
     // Fetch all books on component mount
     // useEffect(() => {
     //     const fetchAllBooks = async () => {
@@ -34,7 +35,7 @@ const FilterBooks = () => {
     useEffect(() => {
         const fetchDropdownOptions = async () => {
             try {
-                const response = await axios.get('/api/books/dropdown-options');
+                const response = await axios.get(`${API_URL}/api/books/dropdown-options`);
                 if (response.data.authors && Array.isArray(response.data.authors)) {
                     setAuthors(response.data.authors);
                 } else {
@@ -57,7 +58,7 @@ const FilterBooks = () => {
     // Apply the filter based on selected author and genre
     const handleFilter = async () => {
         try {
-            const response = await axios.get('/api/books/filter', {
+            const response = await axios.get(`${API_URL}/api/books/filter`, {
                 params: {
                     author: selectedAuthor,
                     genre: selectedGenre,

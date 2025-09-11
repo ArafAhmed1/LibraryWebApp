@@ -7,11 +7,12 @@ import '../../src/styles/AdminBorrowRequest.css';
 const AdminBorrowRequests = () => {
   const [requests, setRequests] = useState([]);
   const [message, setMessage] = useState("");
+  const API_URL = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
     const fetchRequests = async () => {
       try {
-        const response = await axios.get("/api/borrowRequests");
+        const response = await axios.get(`${API_URL}/api/borrowRequests`);
         setRequests(response.data);
       } catch (error) {
         console.error("Error fetching borrow requests:", error);
@@ -22,7 +23,7 @@ const AdminBorrowRequests = () => {
 
   const handleAction = async (requestId, action) => {
     try {
-      await axios.post(`/api/borrowRequests/${requestId}/${action}`);
+      await axios.post(`${API_URL}/api/borrowRequests/${requestId}/${action}`);
       setMessage(`Request ${action} successfully!`);
       setRequests(requests.filter((req) => req._id !== requestId));
     } catch (error) {

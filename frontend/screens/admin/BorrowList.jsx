@@ -6,11 +6,12 @@ const BorrowList = () => {
   const [borrowedBooks, setBorrowedBooks] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const API_URL = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
     const fetchBorrowedBooks = async () => {
       try {
-        const { data } = await axios.get('/api/borrowedBooks/all');
+        const { data } = await axios.get(`${API_URL}/api/borrowedBooks/all`);
         setBorrowedBooks(data);
         setLoading(false);
       } catch (err) {

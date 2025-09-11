@@ -11,6 +11,7 @@ const UserDashboard = () => {
   const [showChangePasswordForm, setShowChangePasswordForm] = useState(false);
   const [formData, setFormData] = useState({ name: '', email: '' });
   const [passwordData, setPasswordData] = useState({ currentPassword: '', newPassword: '', confirmPassword: '' });
+  const API_URL = import.meta.env.VITE_API_URL;
 
   // Dynamic greeting based on the time of day
   const getGreeting = () => {
@@ -25,7 +26,7 @@ const UserDashboard = () => {
     const fetchProfile = async () => {
       try {
         const userId = getCurrentUserId(); // Get the current user's ID
-        const { data } = await axios.get(`/api/users/profile/${userId}`);
+        const { data } = await axios.get(`${API_URL}/api/users/profile/${userId}`);
         setUser(data);
         setFormData({ name: data.name, email: data.email });
         setLoading(false);
@@ -42,7 +43,7 @@ const UserDashboard = () => {
     e.preventDefault();
     try {
       const userId = getCurrentUserId();
-      const { data } = await axios.put(`/api/users/profile/${userId}`, formData);
+      const { data } = await axios.put(`${API_URL}/api/users/profile/${userId}`, formData);
       setUser(data);
       setShowEditForm(false);
       alert('Profile updated successfully');
@@ -60,7 +61,7 @@ const UserDashboard = () => {
     }
     try {
       const userId = getCurrentUserId();
-      await axios.put(`/api/users/change-password/${userId}`, passwordData);
+      await axios.put(`${API_URL}/api/users/change-password/${userId}`, passwordData);
       alert('Password changed successfully');
       setShowChangePasswordForm(false);
       setPasswordData({ currentPassword: '', newPassword: '', confirmPassword: '' });

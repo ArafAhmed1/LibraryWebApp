@@ -27,6 +27,7 @@ const Header = () => {
   const [isNavOpen, setIsNavOpen] = useState(false); // State to control navbar collapse
   const [isUserDropdownOpen, setIsUserDropdownOpen] = useState(false); // State to control user dropdown
   const [isAdminDropdownOpen, setIsAdminDropdownOpen] = useState(false); // State to control admin dropdown
+  const API_URL = import.meta.env.VITE_API_URL;
 
   const { userInfo } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
@@ -59,7 +60,7 @@ const Header = () => {
         if (!userId) return;
 
         try {
-          const response = await fetch(`/api/users/overdueBooks/${userId}`);
+          const response = await fetch(`${API_URL}/api/users/overdueBooks/${userId}`);
           const data = await response.json();
           setOverdueBooks(data.overdueBooks || []);
         } catch (error) {

@@ -4,12 +4,13 @@ import { getCurrentUserId } from '../../globalUser.js';
 const OverdueNotifications = () => {
   const [notifications, setNotifications] = useState([]);
   const [loading, setLoading] = useState(true);
+  const API_URL = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
     const fetchNotifications = async () => {
       const userId = getCurrentUserId();
       try {
-        const response = await fetch(`/api/borrow/notifications/${userId}`);
+        const response = await fetch(`${API_URL}/api/borrow/notifications/${userId}`);
         const data = await response.json();
         setNotifications(data.overdueNotifications);
         setLoading(false);

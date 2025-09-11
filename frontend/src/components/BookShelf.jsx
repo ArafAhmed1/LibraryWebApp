@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import BookDisplay from './BookDisplay.jsx';
+const API_URL = import.meta.env.VITE_API_URL;
+
 
 const Bookshelf = () => {
     const [books, setBooks] = useState([]); // State to hold books from backend
@@ -8,7 +10,7 @@ const Bookshelf = () => {
     // Fetch books from backend when the component mounts
         const fetchBooks = async () => {
         try {
-            const res = await fetch('/api/bookshelf');
+            const res = await fetch(`${API_URL}/api/bookshelf`);
             const data = await res.json();
             setBooks(data); // Set books to the state
         } catch (error) {

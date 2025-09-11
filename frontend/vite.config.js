@@ -19,10 +19,12 @@ export default defineConfig({
     port: 3000, // Frontend port
     proxy: {
       '/api': {
-        target: 'http://localhost:5000', // Backend URL
+        target: 'http://3.109.154.161:5000', // Backend URL
         changeOrigin: true, // Adjusts the origin of the request to match the target
         secure: false, // If your backend doesn't use HTTPS
       },
     },
   }
 });
+
+

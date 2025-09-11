@@ -9,12 +9,13 @@ const UserBorrowedBooks = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [returnRequests, setReturnRequests] = useState({});
+  const API_URL = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
     const fetchBorrowedBooks = async () => {
       const userId = getCurrentUserId();
       try {
-        const { data } = await axios.get(`/api/borrowed-books/${userId}`);
+        const { data } = await axios.get(`${API_URL}/api/borrowed-books/${userId}`);
         const overdueBooks = [];
         const nonOverdueBooks = [];
 
@@ -49,7 +50,7 @@ const UserBorrowedBooks = () => {
       console.log("Sending data:", { userId, bookId });
       
       // Send a POST request to create a return request
-      const response = await axios.post("/api/return-request", { userId, bookId });
+      const response = await axios.post(`${API_URL}/api/return-request`, { userId, bookId });
   
       alert(response.data.message); // Success message
 

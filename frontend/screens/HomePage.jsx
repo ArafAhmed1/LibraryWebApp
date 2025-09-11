@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import BookDisplay from '../src/components/BookDisplay.jsx';
 import SearchBar from '../src/components/SearchBar.jsx';
 import '../src/styles/HomePage.css';
-
+const API_URL = import.meta.env.VITE_API_URL;
 const HomePage = () => {
     const [books, setBooks] = useState([]); // State to hold books from backend
 
@@ -10,7 +10,7 @@ const HomePage = () => {
     // Fetch books from backend when the component mounts
         const fetchBooks = async () => {
         try {
-            const res = await fetch('/api');
+            const res = await fetch(`${API_URL}/api/homePageBooks`);
             const data = await res.json();
             setBooks(data); // Set books to the state
         } catch (error) {
@@ -23,7 +23,7 @@ const HomePage = () => {
 
     return (
         <>
-        <h1 class="home-welcome">Ready to dive into a new adventure? Find your next favorite book today!</h1>
+        <h1 className="home-welcome">Ready to dive into a new adventure? Find your next favorite book today!</h1>
         {/* <SearchBar /> */}
         <div className="bookshelf">
         <h1 className="bookshelf-title">Our Newest Arrivals!</h1>

@@ -6,11 +6,12 @@ const AdminReturnRequests = () => {
   const [returnRequests, setReturnRequests] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const API_URL = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
     const fetchReturnRequests = async () => {
       try {
-        const { data } = await axios.get("/api/return-requests");
+        const { data } = await axios.get(`${API_URL}/api/return-requests`);
         setReturnRequests(data);
         setLoading(false);
       } catch (err) {
@@ -25,7 +26,7 @@ const AdminReturnRequests = () => {
   const handleApproveReturn = async (id) => {
     try {
       // Approve the return by making the API call
-      const response = await axios.put(`/api/return-requests/${id}/approve`);
+      const response = await axios.put(`${API_URL}/api/return-requests/${id}/approve`);
       
       if (response.status === 200) {
         alert("Return request approved!");
@@ -43,7 +44,7 @@ const AdminReturnRequests = () => {
 
   const handleRejectReturn = async (id) => {
     try {
-      const response = await axios.delete(`/api/return-requests/${id}/reject`);
+      const response = await axios.delete(`${API_URL}/api/return-requests/${id}/reject`);
       
       if (response.status === 200) {
         alert("Return request rejected!");

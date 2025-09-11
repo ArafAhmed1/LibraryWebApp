@@ -1,6 +1,5 @@
 import { fetchBaseQuery, createApi } from '@reduxjs/toolkit/query/react';
-import { BASE_URL } from '../../constants';
-
+const API_URL = import.meta.env.VITE_API_URL;
 import { logout } from './authSlice'; // Import the logout action
 
 // NOTE: code here has changed to handle when our JWT and Cookie expire.
@@ -9,7 +8,7 @@ import { logout } from './authSlice'; // Import the logout action
 // https://redux-toolkit.js.org/rtk-query/usage/customizing-queries#customizing-queries-with-basequery
 
 const baseQuery = fetchBaseQuery({
-  baseUrl: BASE_URL,
+  baseUrl: API_URL,
 });
 
 async function baseQueryWithAuth(args, api, extra) {

@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { getCurrentUserId } from "../../globalUser.js";
+const API_URL = import.meta.env.VITE_API_URL;
+
 
 const BookCard = ({ book, viewMode }) => {
   const [finishedBooks, setFinishedBooks] = useState([]);
@@ -10,7 +12,7 @@ const BookCard = ({ book, viewMode }) => {
   useEffect(() => {
     const fetchUserFinishedBooks = async () => {
       try {
-        const { data } = await axios.get(`/api/users/${currentUserId}`);
+        const { data } = await axios.get(`${API_URL}/api/users/${currentUserId}`);
         setFinishedBooks(data.finishedBooks);
       } catch (error) {
         console.error("Failed to fetch user data:", error);

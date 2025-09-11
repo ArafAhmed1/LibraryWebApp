@@ -10,10 +10,11 @@ import "../../src/styles/UserList.css"; // Import your custom styles
 const UserList = () => {
   const [users, setUsers] = useState([]);
   const [selectedUserId, setSelectedUserId] = useState(null);
+  const API_URL = import.meta.env.VITE_API_URL;
 
   const fetchUsers = async () => {
     try {
-      const { data } = await axios.get("/api/users");
+      const { data } = await axios.get(`${API_URL}/api/users`);
       setUsers(data);
     } catch (err) {
       toast.error("Failed to load users");
@@ -30,7 +31,7 @@ const UserList = () => {
 
   const deleteUser = async (id, name) => {
     try {
-      await axios.delete(`/api/users/${id}`);
+      await axios.delete(`${API_URL}/api/users/${id}`);
       showToast("deleted", name);
       fetchUsers();
     } catch (err) {
@@ -40,7 +41,7 @@ const UserList = () => {
 
   const updateUser = async (id, updates, name, actionDescription) => {
     try {
-      await axios.put(`/api/users/${id}`, updates);
+      await axios.put(`${API_URL}/api/users/${id}`, updates);
       showToast(actionDescription, name);
       fetchUsers();
     } catch (err) {
